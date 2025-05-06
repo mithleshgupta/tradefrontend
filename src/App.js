@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import "./App.css";
 
-const socket = io("https://tradebackend-4.onrender.com");
+const socket = io("https://tradebackend-9mv6.onrender.com");
 
 function App() {
   const [marketData, setMarketData] = useState([]);
