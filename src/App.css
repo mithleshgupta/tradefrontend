@@ -1,38 +1,134 @@
 .App {
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #f1f4f9;
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #34495e;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.table-wrapper {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.stock-table th {
+  background-color: #34495e;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 14px 16px;
+}
+
+.stock-table td {
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #2c3e50;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.stock-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.stock-table tbody tr:hover {
+  background-color: #f1f4f9;
+  transition: background-color 0.3s ease;
+}
+
+.symbol-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.symbol-cell img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.range-bar {
+  min-width: 200px;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.low-value,
+.high-value {
+  font-size: 13px;
+  width: 45px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.low-value {
+  color: #e74c3c;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.high-value {
+  color: #2ecc71;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bar {
+  flex: 1;
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.marker {
+  position: absolute;
+  top: -6px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #34495e;
+  transform: translateX(-50%);
+  transition: left 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.change-positive {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.change-negative {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.volume {
+  font-size: 13px;
+  color: #7f8c8d;
 }
